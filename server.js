@@ -23,11 +23,9 @@ app.use(
 app.use(express.static("public"));
 app.use(cookieParser());
 
-app.use("/auth", userRoute);
-
-// verifyAuth validate that token exist and is valid to access this products endpoints
-app.use("/products", verifyAuth, productRoute);
-app.use("/orders", verifyAuth, orderRoute);
+app.use("/api/v1/auth", userRoute);
+app.use("/api/v1/products", verifyAuth, productRoute); // verifyAuth validate that token exist and is valid to access this products endpoints
+app.use("/api/v1/orders", verifyAuth, orderRoute);
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
 app.get("*", (req, res) =>

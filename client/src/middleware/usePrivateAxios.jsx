@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import useRefresh from "./useRefresh";
 
 const axiosAuthAPI = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "http://localhost:3000/api/v1",
   headers: {
     "Content-Type": "application/json",
   },
